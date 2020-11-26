@@ -2,18 +2,22 @@ import React from 'react';
 import './App.css';
 
 import firebase from 'firebase/app';
+import 'firebase/firestore';
 import 'firebase/auth';
 
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { CONFIGURACAO_FIREBASE } from './Utils/Firebase/auth';
 
-import { CONFIGURACAO_FIREBASE } from './Utils/Firebase/auth'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import Sair from './Components/Comuns/Sair';
 import Entrar from './Components/Comuns/Entrar';
+import Sala from './Components/Chat/Sala';
 
-firebase.initializeApp(CONFIGURACAO_FIREBASE)
+firebase.initializeApp(CONFIGURACAO_FIREBASE);
 
 const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 function App() {
 
@@ -27,7 +31,8 @@ function App() {
       </header>
 
       <section>
-        {usuario_logado ? "sala de chat" : <Entrar firebase={firebase} auth={auth} />}
+        {usuario_logado ? <Sala firestore={firestore} firebase={firebase} auth={auth} useCollection={useCollectionData} /> 
+                        : <Entrar firebase={firebase} auth={auth} /> }
       </section>
 
     </div>
