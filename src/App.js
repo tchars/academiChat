@@ -2,27 +2,32 @@ import React from 'react';
 import './App.css';
 
 import firebase from 'firebase/app';
-import 'firebase/firestore';
 import 'firebase/auth';
 
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 import { CONFIGURACAO_FIREBASE } from './Utils/Firebase/auth'
+
+import Sair from './Components/Comuns/Sair';
+import Entrar from './Components/Comuns/Entrar';
 
 firebase.initializeApp(CONFIGURACAO_FIREBASE)
 
 const auth = firebase.auth();
-const firestore = firebase.firestore();
 
 function App() {
+
+  const [usuario_logado] = useAuthState(auth);
 
   return (
     <div className="App">
       <header>
-        <h1>academiChat</h1>
-        <button>Sair</button>
+        <h1>👩‍🎓 academi<i>Chat</i> 👨‍🎓</h1>
+        <Sair auth={auth} />
       </header>
 
       <section>
-        mensagens
+        {usuario_logado ? "sala de chat" : <Entrar firebase={firebase} auth={auth} />}
       </section>
 
     </div>
