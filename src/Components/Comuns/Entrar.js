@@ -1,17 +1,16 @@
 import React from 'react'
+import Styles from './Entrar.module.css'
 
-import styles from './Entrar.module.css'
-
-export const Entrar = ({firebase, auth}) => {
-
+export const Entrar = ({app, autorizacao}) => {
+    
     const loginSocialGoogle = () => {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider);
+        const provider = new app.auth.GoogleAuthProvider();
+        autorizacao.signInWithPopup(provider);
     }
     
     return (
         <>
-            <button className={styles.entrar} onClick={loginSocialGoogle}>Acessar usando Google</button>
+            <button className={Styles.entrar} onClick={loginSocialGoogle}>Acessar usando Google</button>
         </>
     )
 }

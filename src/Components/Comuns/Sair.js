@@ -2,8 +2,8 @@ import React from 'react';
 
 import Styles from './Sair.module.css';
 
-export const Sair = ({auth}) => {
-    return auth.currentUser && (
-        <button className={Styles.sair} onClick={() => auth.signOut()}>Sair</button>
+export const Sair = ({autorizacao}) => {
+    return autorizacao.currentUser && (
+        <button className={Styles.sair} onClick={() => autorizacao.signOut()}>Sair</button>
     )
 }

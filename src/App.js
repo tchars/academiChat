@@ -5,21 +5,18 @@ import { Emoji } from './Components/Comuns/Emoji';
 import { Sair } from './Components/Comuns/Sair';
 import { Entrar } from './Components/Comuns/Entrar';
 import { Sala } from './Components/Chat/Sala';
+import { CONFIGURACAO_FIREBASE } from './Utils/Firebase/autorizacao'
 
-import  firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-
-import { CONFIGURACAO_FIREBASE } from './Utils/Firebase/autorizacao'
 
 firebase.initializeApp(CONFIGURACAO_FIREBASE);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-
 
 function App() {
 
@@ -32,12 +29,12 @@ function App() {
           <Emoji aria="Estudante" emoji="👩‍🎓" /> <span style={{fontWeight: 300}}>academi</span><i>Chat</i> <Emoji aria="Estudante" emoji="👨‍🎓" />
         </h1>
 
-        <Sair auth={auth} />
+        <Sair autorizacao={auth} />
       </header>
 
       <section>
-        {usuario_logado ? <Sala firestore={firestore} firebase={firebase} auth={auth} useCollectionData={useCollectionData} /> 
-                        : <Entrar firebase={firebase} auth={auth} /> }
+        {usuario_logado ? <Sala firestore={firestore} firebase={firebase} autorizacao={auth} />
+                        : <Entrar app={firebase} autorizacao={auth} /> }
       </section>
 
     </div>

@@ -1,9 +1,11 @@
-import React from 'react'
-import Mensagem from './Mensagem';
-
+import React from 'react';
 import './Sala.module.css';
 
-export const Sala = ({firestore, auth, firebase, useCollectionData}) => {
+import Mensagem from './Mensagem';
+
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+export const Sala = ({firestore, autorizacao, firebase}) => {
 
   const textoMensagem = React.useRef();
 
@@ -22,11 +24,12 @@ export const Sala = ({firestore, auth, firebase, useCollectionData}) => {
     await db_mensagens.add({
       texto: formularioMensagem,
       criado_em: firebase.firestore.FieldValue.serverTimestamp(),
-      id_usuario: auth.currentUser.uid,
-      url_foto: auth.currentUser.photoURL
+      id_usuario: autorizacao.currentUser.uid,
+      url_foto: autorizacao.currentUser.photoURL
     })
 
     setFormularioMensagem('');
+    
     textoMensagem.current.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -35,7 +38,7 @@ export const Sala = ({firestore, auth, firebase, useCollectionData}) => {
 
       {mensagens && mensagens.map(msg => <Mensagem 
         key={msg.id} 
-        idUsuarioLogado={auth.currentUser.uid} 
+        idUsuarioLogado={autorizacao.currentUser.uid} 
         mensagem={msg} />)}
 
       <span ref={textoMensagem}></span>
@@ -49,7 +52,7 @@ export const Sala = ({firestore, auth, firebase, useCollectionData}) => {
           placeholder="Digite sua mensagem"
       />
 
-      <button type="submit" disabled={!formularioMensagem}>Enviar </button>
+      <button type="submit" disabled={!formularioMensagem}>Enviar ➡</button>
 
     </form>
   </>)
