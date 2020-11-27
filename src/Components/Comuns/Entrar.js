@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './Entrar.module.css'
+
 const Entrar = ({firebase, auth}) => {
 
     const loginSocialGoogle = () => {
@@ -9,7 +11,7 @@ const Entrar = ({firebase, auth}) => {
     
     return (
         <>
-            <button onClick={loginSocialGoogle}>Acessar usando o Google</button>
+            <button className={styles.entrar} onClick={loginSocialGoogle}>Acessar usando Google</button>
         </>
     )
 }

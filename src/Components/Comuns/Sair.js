@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+
+import styles from './Sair.module.css';
 
 const Sair = ({auth}) => {
     return auth.currentUser && (
-        <button onClick={() => auth.signOut()}>Sair</button>
+        <button className={styles.sair} onClick={() => auth.signOut()}>Sair</button>
     )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.css';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -24,7 +24,7 @@ function App() {
   const [usuario_logado] = useAuthState(auth);
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <header>
         <h1>👩‍🎓 academi<i>Chat</i> 👨‍🎓</h1>
         <Sair auth={auth} />
