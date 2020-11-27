@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Entrar.module.css'
 
-const Entrar = ({firebase, auth}) => {
+export const Entrar = ({firebase, auth}) => {
 
     const loginSocialGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
@@ -16,4 +16,3 @@ const Entrar = ({firebase, auth}) => {
     )
 }
 
-export default Entrar

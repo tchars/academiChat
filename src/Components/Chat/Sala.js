@@ -1,13 +1,9 @@
 import React from 'react'
 import Mensagem from './Mensagem';
 
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+import './Sala.module.css';
 
-import styles from './Sala.module.css'
-
-const Sala = ({firestore, auth, firebase, useCollection }) => {
-
-  console.log(firestore, auth, firebase, useCollection)
+export const Sala = ({firestore, auth, firebase, useCollectionData}) => {
 
   const textoMensagem = React.useRef();
 
@@ -19,7 +15,7 @@ const Sala = ({firestore, auth, firebase, useCollection }) => {
 
   const [formularioMensagem, setFormularioMensagem] = React.useState('');
 
-  const sendMessage = async (e) => {
+  const enviarMensagem = async (e) => {
     
       e.preventDefault();
 
@@ -46,17 +42,15 @@ const Sala = ({firestore, auth, firebase, useCollection }) => {
 
     </main>
 
-    <form onSubmit={sendMessage}>
+    <form onSubmit={enviarMensagem}>
 
       <input value={formularioMensagem} 
           onChange={(e) => setFormularioMensagem(e.target.value)} 
           placeholder="Digite sua mensagem"
       />
 
-      <button type="submit" disabled={!formularioMensagem}>Enviar</button>
+      <button type="submit" disabled={!formularioMensagem}>Enviar </button>
 
     </form>
   </>)
 }
-
-export default Sala

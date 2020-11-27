@@ -8,13 +8,10 @@ p {
     text-align: left;
 }
 
-
-
 .mensagem {
     display: flex;
     align-items: flex-end;
 }
-
 
 .enviada {
     flex-direction: row-reverse;
