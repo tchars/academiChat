@@ -1,6 +1,6 @@
 .entrar {
-    color: var(--preto);
-    background: var(--branco);
-    max-width: 400px;
-    margin: 0 auto;
+  color: var(--preto);
+  background: var(--branco);
+  max-width: 400px;
+  margin: 0 auto;
 }

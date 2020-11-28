@@ -19,7 +19,7 @@ main::-webkit-scrollbar-thumb {
   border-radius: 25px;
 }
 
-form {
+.formSala {
   height: 10vh;
   position: fixed;
   bottom: 0;
@@ -30,7 +30,7 @@ form {
   font-size: 1.5rem;
 }
 
-form button {
+.formSala button {
   width: 20%;
   background-color: var(--verde);
 }

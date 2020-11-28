@@ -1,11 +1,11 @@
 .sair {
-    background-color: var(--rosa);
-    color: var(--branco);
-    text-transform: uppercase;
+  background-color: var(--rosa);
+  color: var(--branco);
+  text-transform: uppercase;
 }
 
 .sair:hover {
-    background-color: var(--rosa-claro);
-    text-transform: uppercase;
-    color: var(--preto);
+  background-color: var(--rosa-claro);
+  text-transform: uppercase;
+  color: var(--preto);
 }

@@ -1,66 +1,78 @@
 p {
-    max-width: 500px;
-    margin-bottom: 12px;
-    line-height: 24px;
-    padding: 10px 20px;
-    position: relative;
-    color: var(--branco);
-    text-align: left;
+  max-width: 500px;
+  line-height: 24px;
+  padding: 10px 20px;
+  position: relative;
+  color: var(--branco);
+  text-align: left;
 }
 
 .mensagem {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 .enviada {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .enviada p {
-    color: white;
-    background: var(--enviada);
-    border-radius: 25px 25px 0 25px;
-    align-self: flex-end;
+  color: white;
+  background: var(--enviada);
+  border-radius: 25px 25px 0 25px;
+  align-self: flex-end;
+  text-align: left;
+}
+
+.enviada span {
+  text-align: right;
 }
 
 .enviada p:after {
-	content: '';
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 0;
-    height: 0;
-    border: 8px solid transparent;
-    border-left-color: var(--enviada);
-    border-right: 0;
-    margin-top: -16px;
-    margin-right: -8px;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left-color: var(--enviada);
+  border-right: 0;
+  margin-top: -16px;
+  margin-right: -8px;
 }
 
 .recebida p {
-    border-radius: 25px 25px 25px 0;
-    background: var(--recebida);
-    color: var(--preto);
+  border-radius: 25px 25px 25px 0;
+  background: var(--recebida);
+  color: var(--preto);
 }
 
 .recebida p:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 100%;
-	width: 0;
-	height: 0;
-	border: 8px solid transparent;
-	border-right-color: var(--recebida);
-	border-left: 0;
-	margin-top: -16px;
-	margin-left: -8px;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: var(--recebida);
+  border-left: 0;
+  margin-top: -16px;
+  margin-left: -8px;
 }
 
 img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 0 5px 12px 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px 24px 10px;
+}
+
+.autor {
+  font-size: 10px;
+}
+
+.containerTexto {
+  padding-bottom: 12px;
 }

@@ -1,0 +1,55 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.visivel {
+  visibility: visible;
+}
+
+.invisivel {
+  display: none;
+}
+
+.form {
+  max-width: 500px;
+  font-size: 1.5rem;
+}
+
+.form input,
+.form textarea {
+  height: 10vh;
+  border-bottom: 3px solid var(--branco);
+  margin-bottom: 5vh;
+}
+
+.form input:hover,
+.form input:focus,
+.form textarea:hover,
+.form textarea:focus {
+  border-bottom: 3px solid var(--verde);
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnSalvar {
+}
+
+.btnCancelar {
+  background: transparent;
+  color: var(--rosa-claro);
+}
